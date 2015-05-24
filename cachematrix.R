@@ -34,8 +34,8 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
   
   #get the inverse of the "input matrix associated with the list of functions x"
-  m <- x$getinverse()
-   
+  m <- x$getinverse();
+  
   #if the inverse has not been computed yet, compute it and cache it
   if (is.null(m)) {
     
@@ -46,7 +46,6 @@ cacheSolve <- function(x, ...) {
     #to cache it, use one of the functions in the list x
     m<-solve(data);
     x$setinverse(m);
-    m <- x$getinverse();
   } 
   #otherwise, we already got it from the cache. Thus, we just need to return it
   else {
